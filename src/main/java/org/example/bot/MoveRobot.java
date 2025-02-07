@@ -5,13 +5,17 @@ public static void moveRobot(Robot robot, int toX, int toY) {
     int y = robot.getY();
 
     if (x > toX) {
-        robot.turnLeft();
+        while (robot.getDirection() != Direction.LEFT) {
+            robot.turnLeft();
+        }
         while (x != toX) {
             robot.stepForward();
             x = robot.getX();
         }
     } else if (x < toX) {
-        robot.turnRight();
+        while (robot.getDirection() != Direction.RIGHT) {
+            robot.turnRight();
+        }
         while (x != toX) {
             robot.stepForward();
             x = robot.getX();
@@ -19,13 +23,17 @@ public static void moveRobot(Robot robot, int toX, int toY) {
     }
 
     if (y < toY) {
-        robot.stepForward();
+        while (robot.getDirection() != Direction.DOWN) {
+            robot.turnLeft();
+        }
         while (y != toY) {
             robot.stepForward();
             y = robot.getY();
         }
     } else if (y > toY) {
-        robot.stepForward();
+        while (robot.getDirection() != Direction.UP) {
+            robot.turnRight();
+        }
         while (y != toY) {
             robot.stepForward();
             y = robot.getY();
