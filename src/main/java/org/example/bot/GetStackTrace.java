@@ -1,8 +1,7 @@
-package org.example.bot;
 
 //https://stepik.org/lesson/12772/step/10?unit=3120
 
-public class GetStackTrace {
+public static class GetStackTrace {
     public static void main(String[] args) {
         System.out.println(getCallerClassAndMethodName());
         anotherMethod();
@@ -15,12 +14,20 @@ public class GetStackTrace {
     public static String getCallerClassAndMethodName() {
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
 
+        if (stackTraceElements.length < 2) {
+            return null;
+        }
+
         String className = stackTraceElements[2].getClassName();
         String methodName = stackTraceElements[2].getMethodName();
 
-        String message = "";
+        String result = className + "#" + methodName;
+        System.out.println(result);
 
-
-       return message;
+        return result;
     }
+}
+
+public void main() {
+    GetStackTrace.getCallerClassAndMethodName();
 }
