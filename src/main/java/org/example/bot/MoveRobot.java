@@ -23,7 +23,7 @@ public static void moveRobot(Robot robot, int toX, int toY) {
     }
 
     if (y < toY) {
-        while (robot.getDirection() != Direction.DOWN) {
+        while (robot.getDirection() != Direction.UP) {
             robot.turnLeft();
         }
         while (y != toY) {
@@ -31,7 +31,7 @@ public static void moveRobot(Robot robot, int toX, int toY) {
             y = robot.getY();
         }
     } else if (y > toY) {
-        while (robot.getDirection() != Direction.UP) {
+        while (robot.getDirection() != Direction.DOWN) {
             robot.turnRight();
         }
         while (y != toY) {
@@ -119,8 +119,8 @@ public enum Direction {
 
 public void main() {
     Robot robot = new Robot();
-    moveRobot(robot, 5, 5);
-//    moveRobot(robot, -1, -3);
+//    moveRobot(robot, 5, 5);
+    moveRobot(robot, -1, -3);
 //    moveRobot(robot, -10, 5);
 //    moveRobot(robot, 0, 0);
 
