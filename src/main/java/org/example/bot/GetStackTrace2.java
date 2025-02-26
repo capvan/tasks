@@ -1,7 +1,7 @@
 package org.example.bot;
 //https://stepik.org/lesson/12772/step/10?unit=3120
 
-public static class GetStackTrace {
+public class GetStackTrace2 {
     public static void main(String[] args) {
         System.out.println(getCallerClassAndMethodName());
         anotherMethod();
