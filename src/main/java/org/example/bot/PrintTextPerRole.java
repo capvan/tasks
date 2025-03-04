@@ -13,18 +13,9 @@ private String printTextPerRole(String[] roles, String[] textLines) {
 
             if (text.startsWith(role + ":")) {
                 result.append(i + 1).append(")").append(text.substring(text.indexOf(":") + 1)).append("\n");
-//                String index = role + ":";
-//                result.toString().replace(role + ":", "");
             }
-
         }
         result.append("\n");
-//        }
-//String newRole = role + ":";
-//                if (text.startsWith(role + ":")) {
-//                    result.toString().replaceFirst(role + ":", "xer");
-//                }
-//            }
     }
 
     System.out.println(result.toString());
